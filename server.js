@@ -9,4 +9,8 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/gallery', function(req, res) {
+    res.sendFile(path.join(__dirname + '/Public/gallery.html'));
+});
+
 app.listen(PORT);

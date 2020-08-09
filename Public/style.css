@@ -9,7 +9,7 @@ input[type=text],
 input[type=submit],
 select,
 textarea{-webkit-appearance: none;appearance: none;border-radius: 0;}
-div:before,
+
 div:after,
 section:before,
 section:after,
@@ -143,6 +143,22 @@ h1{
   font-weight: 400;
   font-style: normal;
 }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, .8fr);
+  grid-gap: 15px;
+  width: 100%;
+  padding: 5%;
+}
+.gallery > img {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .font{
   font-size: 40px;
   color: #0a0a0a;
@@ -228,6 +244,9 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 830px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .affordable{
     float: unset;
     width: 100%;
