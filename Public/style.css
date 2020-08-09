@@ -9,7 +9,6 @@ input[type=text],
 input[type=submit],
 select,
 textarea{-webkit-appearance: none;appearance: none;border-radius: 0;}
-
 div:after,
 section:before,
 section:after,
@@ -49,7 +48,6 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
   justify-content: center;
   justify-content: space-evenly;
 }
-
 .navbar a {
   font-size: 16px;
   color: white;
@@ -63,7 +61,6 @@ h2{
 .dropdown {
   overflow: hidden;
 }
-
 .dropdown .dropbtn {
   font-size: 16px;  
   border: none;
@@ -74,11 +71,9 @@ h2{
   font-family: inherit;
   margin: 0;
 }
-
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -87,7 +82,6 @@ h2{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 .dropdown-content a {
   float: none;
   color: rgb(255, 255, 255);
@@ -96,23 +90,20 @@ h2{
   display: block;
   text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: red;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .block{
   background-image: url("pics/front-gate.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-
+  background-position: top;
   margin: 2em 0em 2em 0em;
 }
 h1{
- margin-top: 20%;
+ padding-top: 20%;
  margin-bottom: 20%;
 }
 .flex{
