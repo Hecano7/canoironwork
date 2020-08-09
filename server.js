@@ -12,5 +12,8 @@ app.get('/', function(req, res) {
 app.get('/gallery', function(req, res) {
     res.sendFile(path.join(__dirname + '/Public/gallery.html'));
 });
+app.get('/driveway', function(req, res) {
+    res.sendFile(path.join(__dirname + '/Public/driveway.html'));
+});
 
 app.listen(PORT);

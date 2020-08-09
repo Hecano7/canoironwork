@@ -150,6 +150,22 @@ h1{
   margin-top: auto;
   margin-bottom: auto;
 }
+.driveway {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, .8fr);
+  grid-gap: 15px;
+  width: 100%;
+  padding: 5%;
+}
+.driveway > img {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .font{
   font-size: 40px;
   color: #0a0a0a;
