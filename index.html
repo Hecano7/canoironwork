@@ -50,10 +50,10 @@
       <div class="container">
         <form method="POST" action="/submit">
           <h2 style="color: white;">Contact Us</h2>
-          <input type="text" id="name" name="firstname" placeholder="Your name..">
-          <input type="tel" id="tel" name="phone" placeholder="(619) 245 - 3678"
+          <input type="text" id="name" name="name" placeholder="Your name.." required>
+          <input type="tel" id="phone" name="phone" placeholder="(619) 245 - 3678"
             pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
-          <textarea id="message" name="subject" placeholder="Your message.." style="height:200px"></textarea>
+          <textarea id="message" name="message" placeholder="Your message.." style="height:200px" required></textarea>
           <h3 style="color: white;">Optional: Upload Image of Design</h3>
           <div class="float-left">
               <input type="file" name="inpFile" id="inpFile">

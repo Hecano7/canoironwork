@@ -5,21 +5,17 @@ module.exports = (request) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
+            user: '7hecano@gmail.com',
+            pass: 'ArabellaIsMyLove87'
         }
     });
-    // mail options
-    console.log(`from: ${request.body.name},
-    to: process.env.SENDTO,
-    subject: ${request.body.name}: ${request.body.tel},
-    text: Message Body\n${request.body.message}`);
-    
+    // mail options    
     const mailOptions = {
         from: `${request.body.name}`,
-        to: process.env.SENDTO,
-        subject: `${request.body.name}: ${request.body.tel}`,
-        text: `Message Body\n${request.body.message}`
+        to: "canoironworksd@gmail.com",
+        subject: `${request.body.name}: ${request.body.phone}`,
+        text: `Message Body\n${request.body.message}`,
+        attatchment: `${request.body.inpFile}`
     }
     // use the transporter to send email
     transporter.sendMail(mailOptions, (err, res) => {console.log('mail sent')})
