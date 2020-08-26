@@ -20,14 +20,14 @@
 
   <div class="navbar">
     <a href="gallery">Gallery</a>
-    <a href="#news">Estimate</a>
+    <a href="../automatic">Automatic Gates</a>
     <div class="dropdown">
       <button class="dropbtn">Gates
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
         <a href="driveway">Driveway Gates</a>
-        <a href="#">Spiral Staircase</a>
+        <a href="../fencing">Fences</a>
       </div>
     </div>
   </div>
@@ -48,13 +48,21 @@
 
     <div class="cantact-us">
       <div class="container">
-        <form action="/action_page.php">
+        <form method="POST" action="/submit">
           <h2 style="color: white;">Contact Us</h2>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          <input type="tel" id="tel-number" name="phone" placeholder="(619) 245 - 3678"
+          <input type="text" id="name" name="firstname" placeholder="Your name..">
+          <input type="tel" id="tel" name="phone" placeholder="(619) 245 - 3678"
             pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
-          <textarea id="subject" name="subject" placeholder="Your message.." style="height:200px"></textarea>
-          <input type="submit" value="Send" style="margin-top: 5%;">
+          <textarea id="message" name="subject" placeholder="Your message.." style="height:200px"></textarea>
+          <h3 style="color: white;">Optional: Upload Image of Design</h3>
+          <div class="float-left">
+              <input type="file" name="inpFile" id="inpFile">
+                  <div class="image-preview" id="imagePreview">
+                      <img src="" alt="Image Preview" class="image-preview__image">
+                      <span class="image-preview__default-text">Image Preview</span>
+                  </div>
+          </div>
+          <input type="submit" value="Send" style="margin-top: 5%;" onclick="sendEmail()">
         </form>
       </div>
     </div>

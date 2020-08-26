@@ -249,6 +249,55 @@ input[type=submit]:hover {
   background: #000;
   text-align: center;
 }
+.next {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  width: 80%;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3em;
+  margin-bottom: -7em;
+}
+.next > img {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  width: 100%;
+}
+.image-preview{
+  text-align: left;
+  width: 250px;
+  min-height: 170px;
+  border: 2px solid #dddddd;
+  margin: 1em auto 1em 2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #cccccc;
+}
+.image-preview__image {
+  display: none;
+  width: 100%;
+}
+#inpFile{
+  max-width: 14em;
+}
+
+.float-left{
+  display:flex;
+  width: 100%;
+  margin-top: 1em;
+
+}
+
+img.mini{
+  max-height: 2em;
+  max-width: 2em;
+}
+
 
 @media screen and (max-width: 830px) {
   .gallery {
@@ -276,5 +325,8 @@ input[type=submit]:hover {
   }
   .block{
     padding-top: 10%;
+  }
+  .next {
+    width: 100%;
   }
 }
