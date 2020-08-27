@@ -160,6 +160,7 @@ h1{
   grid-gap: 15px;
   width: 100%;
   padding: 5%;
+  margin-top: 0%;
 }
 .driveway > img {
   background-color: rgba(255, 255, 255, 0.8);
@@ -306,6 +307,10 @@ img.mini{
   text-indent: 2em;
   margin: 5% 10% 5% 10%;
 }
+.h1{
+  padding: 0;
+  margin: 2em 0 0 0;
+ }
 
 @media screen and (max-width: 830px) {
   .gallery {
@@ -342,4 +347,8 @@ img.mini{
     font-size: 6vw;
     margin: 0% 10% 5% 10%;
   }
+   .h1{
+    padding: 0;
+    margin: 1em 0 0 0;
+   }
 }
