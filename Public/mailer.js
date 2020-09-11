@@ -15,7 +15,11 @@ module.exports = (request) => {
         to: "canoironworksd@gmail.com",
         subject: `${request.body.name}: ${request.body.phone}`,
         text: `Message Body\n${request.body.message}`,
-        attatchment: `${request.body.inpFile}`
+        attatchments: [
+            {
+                path: `${request.file.path}`,
+            },
+        ]
     }
     // use the transporter to send email
     transporter.sendMail(mailOptions, (err, res) => {console.log('mail sent')})
