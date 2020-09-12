@@ -2,28 +2,19 @@ var PORT = process.env.PORT || 5000;
 var express = require('express');
 var app = express();
 var path = require('path');
-const multer = require('multer');
 const morgan = require("morgan");
+var fs = require('fs');
 const bodyParser = require("body-parser");
 const mailer = require("./Public/mailer");
+const upload = require("express-fileupload");
 
-app.use(express.static('Public'));
+app.use(upload())
+app.use(express.static('Public'))
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 
-var Storage = multer.diskStorage({
-    destination: function(req, file, callback) {
-        callback(null, "./upload");
-    },
-    filename: function(req, file, callback) {
-        callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
-    }
-});
 
-var upload = multer({
-    storage: Storage
-}).single("image"); //Field name and max count
 
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
@@ -42,10 +33,34 @@ app.get('/automatic', function(req, res) {
 app.get('/fencing', function(req, res) {
     res.sendFile(path.join(__dirname + '/Public/fencing.html'));
 });
-app.post('/submit', (req, res) => {
-    console.log(req.body);
-mailer(req);
-res.sendFile('index.html', {root: __dirname });
+app.post('/', (req, res) => {
+    var filePath;
+    var fileName;
+    if(req.files){
+        var file = req.files.inpFile;
+        var filename = file.name;
+        fileName = filename;
+        filePath = __dirname+"/"+filename;
+        file.mv(__dirname+"/"+filename,function(err){
+            if(err){
+                console.log(err);
+                res.send("error occured")
+            }
+        })
+    }
+         mailer(req,fileName,filePath);
+         setTimeout(() => {
+            if(req.files){
+                try {
+                    fs.unlinkSync(filePath)
+                    //file removed
+                } catch(err) {
+                    console.error(err)
+                }
+          }
+        }, 4000);
+
+    res.sendFile('index.html', {root: __dirname });
 });
 
 app.listen(PORT);

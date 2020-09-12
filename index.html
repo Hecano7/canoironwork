@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
+  <title>CanoIronWork</title>
 </head>
 
 <body
@@ -26,8 +26,9 @@ class="home page-template-default page page-id-6 wp-custom-logo wp-embed-respons
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="driveway">Driveway Gates</a>
+        <a href="../driveway">Driveway Gates</a>
         <a href="../fencing">Fences</a>
+        <a href="../colors">Paints</a>
       </div>
     </div>
   </div>
@@ -48,12 +49,12 @@ class="home page-template-default page page-id-6 wp-custom-logo wp-embed-respons
 
     <div class="cantact-us">
       <div class="container">
-        <form method="POST" action="/submit">
+        <form method="POST" enctype="multipart/form-data" action="/">
           <h2 style="color: white;">Contact Us</h2>
           <input type="text" id="name" name="name" placeholder="Your name.." required>
-          <input type="tel" id="phone" name="phone" placeholder="(619) 245 - 3678"
+          <input type="text" id="phone" name="phone" placeholder="(619) 245 - 3678"
             pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
-          <textarea id="message" name="message" placeholder="Your message.." style="height:200px" required></textarea>
+          <textarea id="message" name="message" placeholder="Your Message: If you're seeking a qoute then please specify the dimensions, thank you." style="height:200px" required></textarea>
           <h3 style="color: white;">Optional: Upload Image of Design</h3>
           <div style="margin-top: .7em;">
               <input type="file" name="inpFile" id="inpFile">
