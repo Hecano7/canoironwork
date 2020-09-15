@@ -5,6 +5,7 @@
   let previewImage = previewContainer.querySelector(".image-preview__image");
   let previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
   
+
   document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("mail") == "sent") {
       alert("Message Sent: Thank you for your message, we will get back to you soon.");
@@ -47,3 +48,5 @@
     window.location.href = "#dog";
     // console.log(element.children[0].src);
   }
+
+  
