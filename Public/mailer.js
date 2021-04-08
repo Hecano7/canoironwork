@@ -46,7 +46,7 @@ module.exports = (request,files) => {
         }
     }
     console.log(attatchments);
-    use the transporter to send email
+    // use the transporter to send email
     transporter.sendMail(mailOptions, (err, info) => {
         if(err){
             console.log(err);
