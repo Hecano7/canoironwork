@@ -64,15 +64,16 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
 }
 .photo-upload-label{
   display:inline-block;
-  width:300px;
+  width: 70%;
   background:#fff;
-  border:1px solid #377aed;
+  border:1.5px solid #377aed;
   margin: 10px auto;
   padding:10px;
   color:#377aed;
   text-transform:uppercase;
   cursor:pointer;
   transition:background .3s ease, color .3s ease;
+  border-radius: 10px;
 }
 .photo-upload-label:hover{
   background:#377aed;
@@ -83,7 +84,8 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
   border: 1px solid #377aed;
 }
 .img-upload-preview {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
 }
 .previewImage {
@@ -404,6 +406,7 @@ img.mini{
   text-align: left;
   text-indent: 2em;
   margin: 5% 10% 5% 10%;
+  font-family: monospace;
 }
 .h1top{
   padding: 0;
