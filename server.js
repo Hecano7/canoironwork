@@ -34,21 +34,21 @@ app.get('/fencing', function(req, res) {
     res.sendFile(path.join(__dirname + '/Public/fencing.html'));
 });
 app.post('/', (req, res) => {
+    var files;
     var filePath;
-    var fileName;
     if(req.files){
-        var file = req.files.inpFile;
-        var filename = file.name;
-        fileName = filename;
-        filePath = __dirname+"/"+filename;
-        file.mv(__dirname+"/"+filename,function(err){
-            if(err){
-                console.log(err);
-                res.send("error occured")
-            }
-        })
+        files = req.files.photo;
+        console.log(files);
+        // var filename = files.name;
+        // filePath = __dirname+"/"+filename;
+        // file.mv(__dirname+"/"+filename,function(err){
+        //     if(err){
+        //         console.log(err);
+        //         res.send("error occured")
+        //     }
+        // })
     }
-         mailer(req,fileName,filePath);
+         mailer(req,files);
          setTimeout(() => {
             if(req.files){
                 try {

@@ -1,38 +1,59 @@
 var nodemailer = require("nodemailer");
 
-module.exports = (request,fileName,filePath) => {
+module.exports = (request,files) => {
     // transporter
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'outlook',
         auth: {
-            user: '7hecano@gmail.com',
-            pass: 'ArabellaIsMyLove87'
+            user: 'canoironwork@outlook.com',
+            pass: 'Bigmac87'
         }
     });
-    // mail options    
+    // mail options   
+    var mailOptions = {}; 
     if(request.files){ 
-    var mailOptions = {
-        from: `${request.file}`,
+        var attatchments = [];
+        for (var i = 0; i < files.length; i++) {
+            var filename = files[i].name;
+            var filepath = __dirname+"/"+filename;
+            var photo = {
+                filename: `${filename}`,
+                path: `${filepath}`,
+            };
+        files[i].mv(__dirname+"/"+filename,function(err){
+            if(err){
+                console.log(err);
+                res.send("error occured")
+            }
+        });
+        attatchments.push(photo);
+              }
+        mailOptions = {
+        from: 'canoironwork@outlook.com',
         to: "canoironworksd@gmail.com",
         subject: `${request.body.name}: ${request.body.phone}`,
         text: `Message Body:\n ${request.body.message}`,
-        attachments: [
-                {
-                    filename: `${fileName}`,
-                    path: `${filePath}`,
-                }
-            ]
+        attachments: attatchments
         }
     }else{
-        var mailOptions = {
-            from: `${request.file}`,
+        console.log("mail without photo");
+        console.log(`${request.body.name},${request.body.phone},${request.body.message}`);
+        mailOptions = {
+            from: 'canoironwork@outlook.com',
             to: "canoironworksd@gmail.com",
             subject: `${request.body.name}: ${request.body.phone}`,
             text: `Message Body:\n ${request.body.message}`
         }
     }
-    // use the transporter to send email
-    transporter.sendMail(mailOptions, (err, res) => {console.log('mail sent')})
+    console.log(attatchments);
+    use the transporter to send email
+    transporter.sendMail(mailOptions, (err, info) => {
+        if(err){
+            console.log(err);
+            return;
+        }
+        console.log("Sent: " + info.response);
+    })
 
     return true;
 }

@@ -40,7 +40,7 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
 }
 .navbar {
   top: 0;
-  z-index: .1;
+  z-index: 1;
   position: sticky;
   background-color: rgb(135, 26, 26);
   display: inline-flex;
@@ -55,12 +55,94 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
+.photo-uploader-box {
+  width: 100%;
+  margin: 30px auto 0;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+.photo-upload-label{
+  display:inline-block;
+  width:300px;
+  background:#fff;
+  border:1px solid #377aed;
+  margin: 10px auto;
+  padding:10px;
+  color:#377aed;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .3s ease, color .3s ease;
+}
+.photo-upload-label:hover{
+  background:#377aed;
+  color:#fff;
+}
+#photo-upload {
+  display:none;
+  border: 1px solid #377aed;
+}
+.img-upload-preview {
+  margin-top: 20px;
+  padding: 10px;
+}
+.previewImage {
+  border: 1px solid #819d97;
+  height: 120px;
+  width: 120px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.previewImage i {
+  width: 24px;
+  height:24px;
+  position:relative;
+  right:20px;
+  top:-4px;
+  float: left;;
+  border:1px solid #369;
+  background: #ffffff;
+  padding: 2px;
+  color: #377aed;
+  font-weight:700;
+  font: 18px arial;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color .3s ease, border .3s ease;
+}
+.previewImage i:hover{
+  color: #ff1313;
+  border:1px solid #ff1313;
+}
+.previewImage img {
+  border:1px solid #369;
+  width: 118px;
+  height: 118px;
+}
+.photo-file-detail {
+  background: #819d97;
+  padding: 7px;
+  color: #ffffff;
+  border-bottom: 1px solid #fff;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.photo-file-details {
+  display: inline-block;
+  width: 400px;
+}
 h2{
   margin-bottom: 5%;
 }
 .dropdown {
   overflow: hidden;
+  margin-left: 10%; 
 }
+.marginLeft {
+  margin-left: 10%;
+}
+
 a{
   display: inline;
 }
@@ -444,6 +526,12 @@ img.mini{
   
 
 @media screen and (max-width: 830px) {
+  .marginLeft {
+    margin-left: 0%;
+  }
+  .dropdown {
+    margin-left: 0%; 
+  }
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
