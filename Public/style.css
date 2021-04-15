@@ -57,6 +57,7 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
 }
 .photo-uploader-box {
   width: 100%;
+  height: 80%;
   margin: 30px auto 0;
   background: #fff;
   text-align: center;
@@ -133,6 +134,12 @@ body{font-family: Arial; background-color: rgb(253,208,179); text-align: center;
 .photo-file-details {
   display: inline-block;
   width: 400px;
+}
+.gall-header{
+  padding-top: 5%;
+  margin-bottom: 5px;
+  font-family: crimson text semi bold;
+
 }
 h2{
   margin-bottom: 5%;
@@ -315,7 +322,9 @@ input[type=tel] {
 input[type=submit]:hover {
   background-color: #b5b5b5;
 }
-
+.split{
+  display: flex;
+}
 .container {
   border-radius: 5px;
   background-color: rgb(135, 26, 26);
@@ -345,7 +354,7 @@ input[type=submit]:hover {
 }
 
 .cantact-us{
-  padding: 5% 5% 10% 5%;width: 50%;float: left;
+  padding: 5% 5% 10% 5%;width: 100%;float: left;
 }
 #footer {
   padding: 20px;
@@ -399,14 +408,21 @@ img.mini{
   max-height: 2em;
   max-width: 2em;
 }
-
+.description{
+  font-size: 2.5vw;
+  text-align: left;
+  text-indent: 2em;
+  font-family: crimson text semi bold;
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
 .automatic{
   width: 80%;
   font-size: 2vw;
   text-align: left;
   text-indent: 2em;
   margin: 5% 10% 5% 10%;
-  font-family: monospace;
+  font-family: crimson text semi bold;
 }
 .h1top{
   padding: 0;
@@ -587,5 +603,8 @@ img.mini{
   }
   .dropdown-content a {
     text-align: center;
+  }
+  .split{
+    display: unset;
   }
 }
