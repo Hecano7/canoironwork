@@ -33,6 +33,9 @@ app.get('/automatic', function(req, res) {
 app.get('/fencing', function(req, res) {
     res.sendFile(path.join(__dirname + '/Public/fencing.html'));
 });
+app.get('/sitemap', function(req, res) {
+    res.sendFile(path.join(__dirname + '/sitemap.xml'));
+});
 app.post('/', (req, res) => {
     var files;
     var filePath;
