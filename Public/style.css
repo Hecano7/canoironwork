@@ -550,6 +550,20 @@ img.mini{
   }
   
 
+@media screen and (min-width: 1400px) {
+  .continer{
+    padding: 2%;
+  }
+  .cantact-us{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    float: unset;
+  }
+  h2{
+    margin-bottom: 2%;
+  }
+}
 @media screen and (max-width: 830px) {
   .marginLeft {
     margin-left: 0%;
