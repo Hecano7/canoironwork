@@ -72,7 +72,8 @@
     <div class="cantact-us">
       <div class="container">
         <h2 style="color: white;">Contact Us</h2>
-        <form method="POST" enctype="multipart/form-data" action="/" class="split">
+        <form method="POST" enctype="multipart/form-data" action="/">
+          <div class="split">
           <div class="left-side" >
           <input type="text" id="name" name="name" placeholder="Your name.." required>
           <input type="text" id="phone" name="phone" placeholder="(619) 123 - 4567"
@@ -87,9 +88,10 @@
             <input type="file" id="photo-upload" class="photo-input link-check" name="photo" data-object-type="shelters, taverns, mineral-water, landmarks, stations, photos" maxlength="127" placeholder="https://alabak.info/site_db/hiji/h.milevi_skali.jpg" title="Трябва да съдържа URL път към снимка. Ограничение: 127 символа." accept="image/*" multiple>
             <div class="img-upload-preview"></div>
           </fieldset>
-        </div>  
+        </div> 
+      </div> 
+        <input onclick="sendEmail()" type="submit" value="Send" style="margin-top: 5%;" >
       </form>
-      <input onclick="sendEmail()" type="submit" value="Send" style="margin-top: 5%;" >
     </div>
     </div>
 
