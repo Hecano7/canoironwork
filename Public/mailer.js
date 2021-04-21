@@ -13,27 +13,50 @@ module.exports = (request,files) => {
     var mailOptions = {}; 
     if(request.files){ 
         var attatchments = [];
-        for (var i = 0; i < files.length; i++) {
-            var filename = files[i].name;
-            var filepath = __dirname+"/"+filename;
+        if(files.length != undefined){
+            for (var i = 0; i < files.length; i++) {
+                var filename = files[i].name;
+                var filepath = __dirname+"/"+filename;
+                var photo = {
+                    filename: `${filename}`,
+                    path: `${filepath}`,
+                };
+            files[i].mv(__dirname+"/"+filename,function(err){
+                if(err){
+                    console.log(err);
+                    res.send("error occured")
+                }
+            });
+            attatchments.push(photo);
+                  }
+            mailOptions = {
+            from: 'canoironwork@outlook.com',
+            to: "canoironworksd@gmail.com",
+            subject: `${request.body.name}: ${request.body.phone}`,
+            text: `Message Body:\n ${request.body.message}`,
+            attachments: attatchments
+            }
+        }else{
+            var filename = files.name;
+            filePath = __dirname+"/"+filename;
             var photo = {
                 filename: `${filename}`,
-                path: `${filepath}`,
+                path: `${filePath}`,
             };
-        files[i].mv(__dirname+"/"+filename,function(err){
-            if(err){
-                console.log(err);
-                res.send("error occured")
-            }
-        });
-        attatchments.push(photo);
-              }
-        mailOptions = {
-        from: 'canoironwork@outlook.com',
-        to: "canoironworksd@gmail.com",
-        subject: `${request.body.name}: ${request.body.phone}`,
-        text: `Message Body:\n ${request.body.message}`,
-        attachments: attatchments
+            files.mv(__dirname+"/"+filename,function(err){
+                if(err){
+                    console.log(err);
+                    res.send("error occured")
+                }
+            });
+            attatchments.push(photo);
+            mailOptions = {
+                from: 'canoironwork@outlook.com',
+                to: "canoironworksd@gmail.com",
+                subject: `${request.body.name}: ${request.body.phone}`,
+                text: `Message Body:\n ${request.body.message}`,
+                attachments: attatchments
+                }
         }
     }else{
         console.log("mail without photo");
@@ -45,7 +68,7 @@ module.exports = (request,files) => {
             text: `Message Body:\n ${request.body.message}`
         }
     }
-    console.log(attatchments);
+    console.log("attatchments",attatchments);
     // use the transporter to send email
     transporter.sendMail(mailOptions, (err, info) => {
         if(err){

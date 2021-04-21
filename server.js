@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
     var filePath;
     if(req.files){
         files = req.files.photo;
-        console.log(files);
+        // console.log(files);
         // var filename = files.name;
         // filePath = __dirname+"/"+filename;
         // file.mv(__dirname+"/"+filename,function(err){
