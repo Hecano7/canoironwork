@@ -33,7 +33,7 @@ module.exports = (request,files) => {
             from: 'canoironwork@outlook.com',
             to: "canoironworksd@gmail.com",
             subject: `${request.body.name}: ${request.body.phone}`,
-            text: `Message Body:\n ${request.body.message}\n \n ${request.rawHeaders}`,
+            text: `Message Body:\n ${request.body.message}`,
             attachments: attatchments
             }
         }else{
@@ -54,7 +54,7 @@ module.exports = (request,files) => {
                 from: 'canoironwork@outlook.com',
                 to: "canoironworksd@gmail.com",
                 subject: `${request.body.name}: ${request.body.phone}`,
-                text: `Message Body:\n ${request.body.message}\n \n ${request.rawHeaders}`,
+                text: `Message Body:\n ${request.body.message}`,
                 attachments: attatchments
                 }
         }
@@ -65,7 +65,7 @@ module.exports = (request,files) => {
             from: 'canoironwork@outlook.com',
             to: "canoironworksd@gmail.com",
             subject: `${request.body.name}: ${request.body.phone}`,
-            text: `Message Body:\n ${request.body.message}\n \n ${request.rawHeaders}`
+            text: `Message Body:\n ${request.body.message}`
         }
     }
     console.log("attatchments",attatchments);
