@@ -31,7 +31,7 @@ module.exports = (request,files) => {
                   }
             mailOptions = {
             from: 'canoironwork@outlook.com',
-            to: "canoironworksd@gmail.com",
+            to: "canoironwork@aol.com",
             subject: `${request.body.name}: ${request.body.phone}`,
             text: `Message Body:\n ${request.body.message}`,
             attachments: attatchments
@@ -52,7 +52,7 @@ module.exports = (request,files) => {
             attatchments.push(photo);
             mailOptions = {
                 from: 'canoironwork@outlook.com',
-                to: "canoironworksd@gmail.com",
+                to: "canoironwork@aol.com",
                 subject: `${request.body.name}: ${request.body.phone}`,
                 text: `Message Body:\n ${request.body.message}`,
                 attachments: attatchments
@@ -63,7 +63,7 @@ module.exports = (request,files) => {
         console.log(`${request.body.name},${request.body.phone},${request.body.message}`);
         mailOptions = {
             from: 'canoironwork@outlook.com',
-            to: "canoironworksd@gmail.com",
+            to: "canoironwork@aol.com",
             subject: `${request.body.name}: ${request.body.phone}`,
             text: `Message Body:\n ${request.body.message}`
         }
