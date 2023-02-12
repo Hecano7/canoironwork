@@ -9,7 +9,9 @@ const mailer = require("./Public/mailer");
 const upload = require("express-fileupload");
 
 app.use(upload())
-app.use(express.static('Public'))
+// app.use(express.static('Public')
+
+app.use(express.static(__dirname + "/Public/"));
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
