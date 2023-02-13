@@ -6,3 +6,7 @@ logs
 node_modules
 .vscode
 dist
+node_modules/*
+.idea/*
+images/*
+package-lock.json
